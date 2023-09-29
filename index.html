@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +34,7 @@
         visibility: hidden;
         opacity: 0;
         transition: opacity 2s;
-        font-size: 1.5em; /* increased font size */
+        font-size: 1.5em;
     }
 
     .resume-box {
@@ -51,6 +50,20 @@
         color: #1fa2ff;
         text-decoration: none;
         font-weight: bold;
+    }
+
+    .resume-box a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 5px 15px;
+        background: #1fa2ff;
+        border-radius: 3px;
+        transition: background 0.3s;
+        color: white; /* Added to ensure button text is visible */
+    }
+
+    .resume-box a:hover {
+        background: #0056b3;
     }
 
     .resume-box:hover {
@@ -71,12 +84,13 @@
         <h1 class="animated" id="portal"></h1>
         <p class="instructions" id="instructions">Click below to get my resume</p>
         <div class="resume-box" id="resume-box">
-            <a href="#" id="download-link">RESUME</a>
+            <a href="#" id="download-link">Resume in PDF</a>
+            <a href="https://moneshteja.github.io/resume/" id="portal-link" target="_blank">Resume Portal</a>
         </div>
     </div>
     <script>
     window.onload = function() {
-        let delay = 50; // 0.05 second delay for each character
+        let delay = 50;
         let elements = ['Welcome', 'To', "Monesh's", 'Resume', 'Portal'];
         let elementIDs = ['welcome', 'to', 'monesh', 'resume', 'portal'];
         let totalDelay = 0;
@@ -90,7 +104,7 @@
                     document.getElementById(elementIDs[index]).style.opacity = '1';
                 }, totalDelay);
             });
-            totalDelay += delay * 5; // Adding extra delay after each element
+            totalDelay += delay * 5;
         });
 
         setTimeout(() => {
@@ -109,7 +123,7 @@
                 return;
             }
             let password = prompt("Enter password");
-            if (password === "1234") { // replace "1234" with your password
+            if (password === "1234") {
                 window.open('https://moneshteja.github.io/resumepdf/MoneshTejaSanduru_2023 B.tech(cse).pdf');
             } else {
                 alert("Incorrect password");
